@@ -1,0 +1,59 @@
+import tkinter as tk
+import pyttsx3
+
+# Create the root window
+root = tk.Tk()
+root.title("Chatbot ")
+
+# Create a large text entry field
+text_entry = tk.Text(root, height=10, width=50)
+text_entry.pack(pady=20)
+
+# Create a label to display the chatbot's response
+response_label = tk.Label(root, text="", wraplength=400, height=5, width=50)
+response_label.pack(pady=20)
+
+# Create a TTS engine
+engine = pyttsx3.init()
+
+# Create a function to get the user's input and display the chatbot's response
+def get_input():
+    user_input = text_entry.get("1.0", tk.END).lower()
+    print("You said:", user_input)
+
+    if "hi" in user_input or "hello" in user_input or "hey" in user_input:
+        if "hello" in user_input:
+            chatbot_response = "Hello! How may I help you with your stay?"
+        elif "hi" in user_input:
+            chatbot_response = "Hi! Looking for room bookings or other services?"
+        else:
+            chatbot_response = "Welcome to our Hotel! How can I assist you today?"
+    elif "what are your check-in and check-out times?" in user_input:
+        chatbot_response = "Check-in is from 2 PM, and check-out is until 11 AM. Would you like to book a room now?"
+    elif "do you offer free wi-fi?" in user_input:
+        chatbot_response = "Yes, we offer complimentary high-speed Wi-Fi in all areas of the hotel."
+    elif "what amenities does the hotel offer?" in user_input:
+        chatbot_response = "We offer a swimming pool, gym, spa, complimentary breakfast, and room service. What else would you like to know?"
+    elif "can i book a room?" in user_input:
+        chatbot_response = "Of course! What type of room are you looking for? (Standard, Deluxe, Suite)"
+    elif "what is the price of a standard room?" in user_input:
+        chatbot_response = "The price for a standard room starts at ZAR 1,200 per night. Would you like to proceed with a booking?"
+    elif "do you offer airport transfers?" in user_input:
+        chatbot_response = "Yes, we offer airport shuttle services for an additional fee. Would you like to arrange a pick-up?"
+    elif "what is the cancellation policy?" in user_input:
+        chatbot_response = "You can cancel your booking free of charge up to 24 hours before the check-in date."
+    elif "can i extend my stay?" in user_input:
+        chatbot_response = "Certainly! Please let us know the dates, and we will check availability for you."
+    elif "what payment methods do you accept?" in user_input:
+        chatbot_response = "We accept all major credit cards, including Visa, MasterCard, and American Express."
+    elif "quit" in user_input:
+        chatbot_response = "Thank you for using our Hotel Chatbot! Have a great day!"
+    else:
+        chatbot_response = "can yu come again  i cant understand ."
+
+    print("Chatbot:", chatbot_response)
+    response_label.config(text=chatbot_response)
+    engine.say(chatbot_response)
+    engine.runAndWait()
+    
+
