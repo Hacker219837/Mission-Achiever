@@ -1,0 +1,10 @@
+# Create a button to exit the application
+exit_button = tk.Button(root, text="EXIT", command=root.destroy, height=2, width=10, bg="blue", fg="white")
+exit_button.pack(pady=10)
+
+# Create a button to submit the user's input
+submit_button = tk.Button(root, text="SUBMIT", command=get_input, height=2, width=10, bg="red", fg="white")
+submit_button.pack(pady=10)
+
+# Start the GUI event loop
+root.mainloop()
