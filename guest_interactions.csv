@@ -1,0 +1,7 @@
+review_id,guest_id,review_text,sentiment,booking_pattern,satisfaction_score
+
+1,101,"Great service, loved the room and amenities!",positive,frequent,4.8							
+2,102,"The hotel was decent, but the food was terrible.",negative,occasional,2.0							
+3,103,"Amazing experience, will definitely come back!",positive,frequent,4.5							
+4,104,"Not worth the price, the rooms were outdated.",negative,rare,2.5							
+5,105,"Staff were very helpful, but the location is far.",neutral,occasional,3.5							
